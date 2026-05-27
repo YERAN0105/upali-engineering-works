@@ -44,9 +44,11 @@ html {
   animation: marquee 32s linear infinite;
 }
 
-/* pause on hover so users can read logos */
-.marquee-outer:hover .marquee-track {
-  animation-play-state: paused;
+/* pause on hover — only on devices with a real mouse, not touch screens */
+@media (hover: hover) {
+  .marquee-outer:hover .marquee-track {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes marquee {
