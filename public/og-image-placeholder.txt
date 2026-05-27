@@ -1,0 +1,14 @@
+Create an og-image.png file in this folder.
+
+Requirements:
+- Size: 1200 x 630 pixels
+- Format: PNG
+- Content: Your business name, logo, and a short tagline
+- This file is shown when the website link is shared on WhatsApp, Facebook, etc.
+
+Free tools to create it:
+- Canva (canva.com) — easiest option
+- Adobe Express (express.adobe.com)
+
+Once created, save it as: public/og-image.png
+Then update layout.tsx line ~28 to point to your domain: https://yourdomain.lk/og-image.png

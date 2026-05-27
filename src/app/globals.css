@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────
+   CSS custom properties — mirrors tailwind.config.ts
+   Change the two hex values below to retheme the whole site.
+───────────────────────────────────────────────────────────── */
+:root {
+  --color-navy:        #0f2d57;
+  --color-navy-dark:   #091f3d;
+  --color-navy-light:  #1a4a8a;
+  --color-amber:       #f59e0b;
+  --color-amber-dark:  #d97706;
+}
+
+/* ── Smooth anchor scrolling ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Marquee / logo strip ── */
+.marquee-outer {
+  /* mask the edges so logos fade in/out softly */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+/* pause on hover so users can read logos */
+.marquee-outer:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Scroll-triggered fade-in animation ── */
+.anim-fade {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+.anim-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
